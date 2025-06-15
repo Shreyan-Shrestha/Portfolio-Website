@@ -8,7 +8,15 @@ use App\Models\Contact;
 
 class PortfolioController extends Controller
 {
-    public function contact(){
-        return view('contact');
+   public function contact(){
+        $contact = Contact::latest();
+        return view('contact', compact('contacts'));
+    }
+
+    public function contactstore(ContactRequest $request)
+    {
+        $validated = $request->validated();
+        Contact::create($validated);
+        return redirect('/');
     }
 }
