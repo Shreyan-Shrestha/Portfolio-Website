@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </style>
-</head>
-<body>
+@extends('partials.layout')
+
+<!-- <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"> -->
+<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+
+@section('title', 'Portfolio | Home')
+@section('content')
     <nav class="navbar">
         <a href="#" class="logo">Portfolio</a>
         <ul>
@@ -33,7 +28,4 @@
         </div>
 
     </section>
-    
-</body>
-</html>
-@endif
+@endsection
