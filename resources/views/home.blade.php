@@ -23,6 +23,7 @@
                 </div>
    
             </div>
+            
         <div class="home-info">
             <h1>Hello, We all are Developer</h2>
             <h2>Developer</h2>
