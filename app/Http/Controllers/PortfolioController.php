@@ -8,7 +8,7 @@ use App\Models\Contact;
 
 class PortfolioController extends Controller
 {
-   public function contactview(){
+   public function contact(){
         $contacts = Contact::latest();
         return view('contact', compact('contacts'));
     }
