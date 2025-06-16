@@ -108,6 +108,11 @@
         form{
             width:fit-content;
         }
+        .contact-container{
+            border: 1px solid white;
+            margin-bottom: 8px;
+        }
+        
     </style>
 
     @section('title', 'TODO APP | Home')
@@ -116,18 +121,13 @@
         <div class= "content">
              <h1>View Contact</h1>
 
-             
-
+    
             @foreach ($contacts as $contact)
         <div class="contact-container">
-                <label for="email"><b>Email</b></label>
-                <p class="contact_name">{{ $contact['name'] }}</p>
-            
-    
-            </div>
-
-                    
-               
+             <p class="clabel"> Name:</p><p class="contact_name">{{ $contact['name'] }}</p>
+            <p class="clabel"> Email:</p><p class="contact_name">{{ $contact['email'] }}</p>
+             <p class="clabel"> Message:</p><p class="contact_name">{{ $contact['message'] }}</p>
+            </div>  
             @endforeach
         
         </div>

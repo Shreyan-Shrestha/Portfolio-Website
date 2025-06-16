@@ -9,8 +9,11 @@ use App\Models\Contact;
 class PortfolioController extends Controller
 {
    public function contact(){
-        $contacts = Contact::latest();
-        return view('contact', compact('contacts'));
+        return view('contact');
+    }
+    public function viewcontact(){
+        $contacts = Contact::latest()->get();
+        return view('viewcontact', ['contacts'=>$contacts]);
     }
 
     public function contactstore(ContactRequest $request)

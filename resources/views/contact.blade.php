@@ -122,10 +122,10 @@ button:hover {
  <nav class="navbar">
         <a href="#" class="logo">Portfolio</a>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="about.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
             <li><a href="services.html">Resume</a></li>
         </ul>
     </nav>
@@ -161,7 +161,7 @@ button:hover {
   
       
 
-      <button type="button"> <a href="./">Cancel</button>
+      <button type="button"> <a href="/">Cancel</button>
       <button type="submit">Submit</button>
 
         </form>
