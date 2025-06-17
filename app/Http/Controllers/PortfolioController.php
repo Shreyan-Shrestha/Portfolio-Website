@@ -19,4 +19,8 @@ class PortfolioController extends Controller
         Contact::create($validated);
         return redirect('/');
     }
+
+    public function resume(){
+        return view('resume');
+    }
 }
