@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ContactRequest;
-use App\Http\Requests\AboutRequest;
-use App\Models\Contact; 
+use App\Http\Requests\AboutRequest; 
 use App\Models\About;
 
 class PortfolioController extends Controller
