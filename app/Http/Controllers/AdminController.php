@@ -9,8 +9,25 @@ use App\Models\Skills;
 
 class AdminController extends Controller
 {
-    public function index(){
-        return view("admin/admin");
+    public function contactindex()
+    {
+            $contacts = Contact::latest()->paginate(5);
+            return view('admin.contact.index', ['contacts' => $contacts]);
+    }
+
+    public function index()
+    {
+        $contactCount = Contact::count();
+        $contacts = Contact::latest()->get();
+        return view('admin.admin',['contacts'=> $contacts, 'contactCount' => $contactCount]);
+    }
+
+      public function contactstore(ContactRequest $request)
+    {
+        $validated = $request->validated();
+        Contact::create($validated);
+        return redirect('/');
     }
 
 }
+

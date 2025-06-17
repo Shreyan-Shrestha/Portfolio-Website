@@ -3,16 +3,6 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 @section('title', 'Portfolio | Home')
 @section('content')
-    <nav class="navbar">
-        <a href="#" class="logo">Portfolio</a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html">Projects</a></li>
-            <button><a href="/contact">Contact</a></li></button>
-            <li><a href="services.html">Resume</a></li>
-        </ul>
-    </nav>
     <section class="home">
         <div class="home-img">
                 <div class="img-box">
