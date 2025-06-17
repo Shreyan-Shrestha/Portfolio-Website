@@ -1,4 +1,4 @@
- @extends('partials.layout')
+ @extends('partials.admin')
     <style>
         *{
             margin:0;
@@ -18,9 +18,7 @@
             border:4px solid black;
             height: auto;
             width: 70vw;
-            background-color:pink;
             padding: 8px 20px;
-            overflow-y:hidden;
         }
 
         .todo_item{
@@ -45,7 +43,7 @@
         .form{
             width:500px;
             border:2px;
-            padding:50px
+            padding:50px;
             margin-top:100px;
             margin-left:100px;
         }
@@ -57,7 +55,7 @@
             font-size:20px;
             margin-top:-30px;
             color:red;
-            margin-left:100px
+            margin-left:100px;
             background-color:yellow;
             border-radius: 5px;
             float: right;
@@ -68,17 +66,12 @@
             font-size:20px;
             margin-top:-30px;
             color:red;
-            margin-left:100px
+            margin-left:100px;
             background-color:yellow;
             border-radius: 5px;
 
         }
-        /* .wrapper{
-            display: flex;
-            border:2px solid black;
-            justify-content:center;
-            align-items:center;
-        } */
+
          .img_frame{
             height:50px;
             width:50px;
@@ -115,23 +108,34 @@
         
     </style>
 
-    @section('title', 'TODO APP | Home')
+@section('title', 'Portfolio Website | Received Messages')
 
-    @section('content')
-        <div class= "content">
+@section('content')
+    <div class= "content">
              <h1>View Contact</h1>
-
-    
-            @foreach ($contacts as $contact)
-        <div class="contact-container">
-             <p class="clabel"> Name:</p><p class="contact_name">{{ $contact['name'] }}</p>
-            <p class="clabel"> Email:</p><p class="contact_name">{{ $contact['email'] }}</p>
-             <p class="clabel"> Message:</p><p class="contact_name">{{ $contact['message'] }}</p>
+            <div class="contact-container">
+            <table>
+                <tr>
+                    <td>S.N</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                </tr>
+                foreach ($contacts as $contact)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $contact['name'] }}</td>
+                        <td>{{ $contact['email'] }}</td>
+                        <td>{{ $contact['message'] }}</td>
+                    </tr>
+                @endforeach
+            </table>
             </div>  
-            @endforeach
+            
         
-        </div>
-    @endsection
+    </div>
+@endsection
+
 
           
             
