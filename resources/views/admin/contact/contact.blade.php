@@ -13,6 +13,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 body {
     background-color: #f0f0f0;
@@ -104,10 +109,9 @@ button {
   cursor: pointer;
   /* width: 20%; */
 }
+
 button:hover {
   opacity: 1;
-}
-button:hover {
   color: #fff;
   border-color: #fff;
   background: rgba(28, 27, 83, 0.15);
@@ -118,17 +122,8 @@ button:hover {
     </style>
 
  @section('content')
-@section('title', 'TODO APP| ADD')
- <nav class="navbar">
-        <a href="#" class="logo">Portfolio</a>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html">Projects</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="services.html">Resume</a></li>
-        </ul>
-    </nav>
+@section('title', 'Portfolio Website | Contact')
+
     <div class="wrapper">
         
           <div class=h2>
@@ -142,7 +137,7 @@ button:hover {
                 <li></li>
             </ul>
 
-          </div>
+    </div>
           @endif
           <form method="Post" action="/contact" >
             @csrf
@@ -155,12 +150,7 @@ button:hover {
 
       <label for="message"><b>Message</b></label>
       <input type="text" placeholder="Enter Message" name="message" required>
-      <br>
-
-
-  
-      
-
+    </div class="buttons">
       <button type="button"> <a href="/">Cancel</button>
       <button type="submit">Submit</button>
 
