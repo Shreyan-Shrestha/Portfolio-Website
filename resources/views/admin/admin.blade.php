@@ -39,7 +39,6 @@
         background-color: #f8f9fa;
         border: 0 2px solid rgb(53, 54, 54);
         padding: 20px;
-        
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -55,9 +54,20 @@
         font-weight: 500;
         transition: .5s;
     }
+    .nav_return{
+        color:rgb(192, 8, 8);
+        font-size: 18px;
+        font-weight: 500;
+        transition: .5s;
+    }
     ul{
         display: flex;
         flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    li{
+        width: 100%;
     }
     .box_projects, .box_skills, .box_msgs {
         width: 25%;
@@ -89,13 +99,14 @@ th, td {
         padding: 20px;
         color: #666;
 }
+
     
 </style>
 
 @section('content')
     <div class="content">
         <h1>Admin Dashboard</h1>
-        <p>Welcome to the admin dashboard. Here you can manage your portfolio.</p><br>
+        <h3>Welcome to the Admin Panel. Here you can manage your portfolio.</h3><br><br>
 
         <div class="admin-info">
             <div class="box_projects">

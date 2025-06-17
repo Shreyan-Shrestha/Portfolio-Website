@@ -29,6 +29,10 @@
                         <li>
                             <a href="/viewcontact"><div class="nav_btn"><p class="nav_messages">Messages</p></div></a>
                         </li>
+                        <br><br><br>
+                        <li>
+                            <a href="/"><div class="nav_btn"><p class="nav_return">< Return</p></div></a>
+                        </li>
                     </ul>
                 </nav>
        

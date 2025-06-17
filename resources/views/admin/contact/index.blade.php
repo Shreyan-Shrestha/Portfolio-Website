@@ -34,14 +34,12 @@
     text-decoration: none;
     color: inherit;
     }
-    .admin-nav{
+  .admin-nav{
         width: 10%;
-        float: left;
         height: 80vh;
         background-color: #f8f9fa;
         border: 0 2px solid rgb(53, 54, 54);
         padding: 20px;
-        
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -54,6 +52,11 @@
     ul{
         display: flex;
         flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    li{
+        width: 100%;
     }
     .no-data {
         text-align: center;
