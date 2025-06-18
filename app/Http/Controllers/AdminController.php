@@ -21,7 +21,7 @@ class AdminController extends Controller
         $contactCount = Contact::count();
         $skillCount = Skills::count();
         $contacts = Contact::latest()->get();
-        return view('admin.admin',['contacts'=> $contacts, 'contactCount' => $contactCount]);
+        return view('admin.admin',['contacts'=> $contacts, 'contactCount'=>$contactCount,'skillCount'=>$skillCount]);
     }
 
       public function contactstore(ContactRequest $request)
@@ -37,7 +37,7 @@ class AdminController extends Controller
     }
     public function skills()
     {
-        $skills = Skills::all();
+        $skills = Skills::latest()->get();
         return view('admin.skills.skills', ['skills' => $skills]);
     }
     public function addskill()
@@ -48,6 +48,23 @@ class AdminController extends Controller
         $validated = $request->validated();
         Skills::create($validated);
         return redirect('/skills')->with('success', 'Skill added successfully!');
+    }
+
+    public function skilleditView($id){
+        $skill = Skills::where('id', $id)->get();
+        return view('admin.skills.editskill', ['skill'=> $skill[0]]);
+    }
+    
+    public function skilledit(SkillRequest $request)
+    {
+        $validated = $request->validated();
+        Skills::where('id', $request['$id'])->update($validated);
+        return redirect('/skills');
+    }
+
+    public function destroyskill($id){
+        Skills::where('id', $id)->delete();
+        return redirect('/skills')->with('success', 'Skill deleted successfully!');
     }
 }
 

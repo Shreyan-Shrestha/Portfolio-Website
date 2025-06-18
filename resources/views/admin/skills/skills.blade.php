@@ -73,6 +73,14 @@
         width: 100%;
         padding: 0;
     }
+    .skill-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 150px;
+    }
     li{
         width: 100%;
     }
@@ -93,12 +101,34 @@
         height: fit-content;
         padding: 2px;
     }
+    form{
+        margin: 0;
+    }
+    .btn_del{
+        background-color: rgb(180, 18, 18);
+        padding: 4px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
     </style>
 
 @section('content')
     <div class="content">
         <h2>Manage your skills here.</h2>
         <h3>Skills:</h3>
+        @if ($errors->any())
+            <div>
+                <strong>Whoops!</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                    <li></li>
+                </ul>
+            </div>
+            @endif
         <div class="box_skills">
             <div class="admin-actions">
             <a href="/addskill"><button class="btn_add">Add</button></a>
@@ -106,25 +136,25 @@
 
         <div class="admin-info">
             <div class="box_skills">
-                <ul>
+                <ul class="skills-list">
                 @forelse($skills as $skill)
                     <li>
                         <div class="skill-item">
-                            <h4>{{ $skill->name }}</h4>
-                            <form action="/delete/{{ $skill->id }}" method="POST" style="display: inline;">
+                            <p>{{ $skill->name }}</p>
+                            <div>
+                            <a href="skilledit/{{$skill['id']}}"> <button class="btn_edit">Edit</button></a>
+                            <form action="/deleteskill/{{ $skill['id'] }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn_delete">Delete</button>
+                                <button type="submit" class="btn_del">Delete</button>
                             </form>
+                            </div>
                         </div>    
                     </li>                    
                 @empty
                     <p>No skills added yet.</p>
                 @endforelse
                 </ul>
-                <div class="btn_edit">
-                    <a href="/editskill"><button class="btn_edit">Edit</button></a>
-                </div>
             </div>
         </div>
         </div>

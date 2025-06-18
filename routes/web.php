@@ -15,4 +15,7 @@ Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
 Route::get('/skills', [AdminController::class, 'skills']);
 Route::get('/addskill', [AdminController::class,'addskill']);
 Route::post('/skills', [AdminController::class, 'skillstore']);
+Route::put('/skilledit/{id}', [AdminController::class, 'skilledit']);
+Route::get('/skilledit/{id}', [AdminController::class, 'skilleditview']);
+Route::delete('/deleteskill/{id}', [AdminController::class, 'destroyskill']);
 

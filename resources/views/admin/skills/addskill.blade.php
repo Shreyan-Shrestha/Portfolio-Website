@@ -22,14 +22,6 @@
         opacity: 1;
     }
 
-    .admin-info {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        height: fit-content;
-        padding: 2px;
-    }
-
     a{
     text-decoration: none;
     color: inherit;
