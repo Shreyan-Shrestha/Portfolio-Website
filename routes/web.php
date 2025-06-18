@@ -9,8 +9,8 @@ Route::get('/contact', [PortfolioController::class, 'contact']);
 Route::get('/viewcontact', [AdminController::class, 'contactindex']);
 Route::post('/contact', [AdminController::class, 'contactstore']);
 
-Route::get('/addresume', [PortfolioController::class, 'resume']);
-Route::get('/resume', [AdminController::class, 'personalindex']);
+Route::get('/resume', [PortfolioController::class, 'resume']);
+Route::get('/resumeadmin', [AdminController::class, 'resumeindex']);
 Route::post('/resume', [AdminController::class, 'resumestore']);
 
 Route::get('/admin', [AdminController::class, 'index']);

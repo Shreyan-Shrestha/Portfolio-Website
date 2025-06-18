@@ -7,8 +7,6 @@ use App\Http\Requests\ContactRequest;
 use App\Http\Requests\ResumeRequest;
 use App\Models\Contact; 
 use App\Models\Personal;
-use App\Models\Skills;
-
 
 class AdminController extends Controller
 {
@@ -37,17 +35,18 @@ class AdminController extends Controller
         return redirect('/viewcontact');
     }
 
-    public function personalindex()
-    {
-        $personals = Personal::latest()->get();
-        return view('admin.personal.index', ['personals' => $personals]);
-    }
 
-    public function resume(ResumeRequest $request)
+    public function resumestore(ResumeRequest $request)
     {
         $validated = $request->validated();
         Personal::create($validated);
-        return redirect('/resume');
+        return redirect('/resumeadmin');
+    }
+
+    public function resumeindex()
+    {
+        $personals = Personal::latest()->get();
+        return view('admin.resume.index', ['personals' => $personals]);
     }
 }
 
