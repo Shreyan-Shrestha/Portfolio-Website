@@ -156,8 +156,14 @@ button {
 }
 .navbar ul li a:hover {
     color: blue;
+}
+.inp_msg{
+  height: 90px;
+}
+.inp_msg placeholder{
+  text-align: center;
+}
 
-}   
 </style>
 
  @section('content')
@@ -191,7 +197,7 @@ button {
         <input type="text" placeholder="Enter Email" name="email" required>
 
         <label for="message"><b>Message</b></label>
-        <input type="text" placeholder="Enter Message" name="message" required>
+        <input class="inp_msg" type="text" placeholder="Enter Message" name="message" required>
 
         <div class="buttons">
           <button class="btn_cancel"><a href="/">Cancel</a></button>

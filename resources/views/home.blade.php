@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
     
 }
-.a{
+a{
     color: black;
     text-decoration: none;
 }
