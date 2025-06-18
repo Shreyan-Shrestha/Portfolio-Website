@@ -1,6 +1,6 @@
 @extends('partials.layout')
     <style>
-          body {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 body {
     background-color: #f0f0f0;
@@ -57,26 +62,24 @@ body {
 .navbar ul li a:hover {
     color: #a1c500;
 }
+
 .wrapper{
   width: 400px;
   background-color:pink;
   border-radius: 8px;
   padding: 60px;
-  /* text-align: left; */
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  
+}
+
+h2{
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
 }
 form {
   display: flex;
   flex-direction: column;
-}
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  padding: 10px 100px;
-  /* padding: 25px 250px; */
-  /* color: #fff; */
 }
 .container {
   position: relative;
@@ -86,7 +89,7 @@ h2 {
 
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -102,12 +105,26 @@ button {
   margin: 8px 0;
   border-radius:10px;
   cursor: pointer;
-  /* width: 20%; */
+  width: fit-content;
 }
-button:hover {
+
+.buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.btn_cancel{
+  background:red;
+  color: white;
+  margin-right: 5px;
+}
+
+.btn_submit{
+  background: blue;
+  color: white;
+}
+.button:hover {
   opacity: 1;
-}
-button:hover {
   color: #fff;
   border-color: #fff;
   background: rgba(28, 27, 83, 0.15);
@@ -118,21 +135,14 @@ button:hover {
     </style>
 
  @section('content')
-@section('title', 'TODO APP| ADD')
- <nav class="navbar">
-        <a href="#" class="logo">Portfolio</a>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html">Projects</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="services.html">Resume</a></li>
-        </ul>
-    </nav>
+@section('title', 'Portfolio Website | Contact')
+
     <div class="wrapper">
         
           <div class=h2>
-            <h2>ADD TODO</h2>
+            <h2>Leave me a Message</h2>
+          </div>
+          <div>
             @if ($errors->any())
             <strong>Whoops!</strong>
             <ul>
@@ -141,30 +151,27 @@ button:hover {
                 @endforeach
                 <li></li>
             </ul>
-
+            @endif
           </div>
-          @endif
-          <form method="Post" action="/contact" >
-            @csrf
-            <div class="container">
-      <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Your Name" name="name" required>
+          
+      <form method="Post" action="/contact" >
+              @csrf
+              <div class="container">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Your Name" name="name" required>
 
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="message"><b>Message</b></label>
-      <input type="text" placeholder="Enter Message" name="message" required>
-      <br>
+        <label for="message"><b>Message</b></label>
+        <input type="text" placeholder="Enter Message" name="message" required>
 
+        <div class="buttons">
+          <button class="btn_cancel"><a href="/">Cancel</a></button>
+          <button class="btn_submit" type="submit">Submit</button>
 
-  
-      
-
-      <button type="button"> <a href="/">Cancel</button>
-      <button type="submit">Submit</button>
-
-        </form>
+            </form>
+        </div>
+      </form>
     </div>
-        
 @endsection
