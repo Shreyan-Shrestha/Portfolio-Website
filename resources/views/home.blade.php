@@ -12,7 +12,7 @@ body {
     
 }
 .a{
-    color: black
+    color: black;
     text-decoration: none;
 }
 .log{
