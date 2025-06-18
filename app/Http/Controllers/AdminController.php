@@ -29,5 +29,9 @@ class AdminController extends Controller
         return redirect('/');
     }
 
+    public function destroy($id){
+        Contact::where('id', $id)->delete();
+        return redirect('/viewcontact');
+    }
 }
 

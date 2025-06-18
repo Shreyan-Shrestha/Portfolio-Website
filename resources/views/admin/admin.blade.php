@@ -35,7 +35,7 @@
     }
     .admin-nav{
         width: 10%;
-        height: 80vh;
+        height: 90vh;
         background-color: #f8f9fa;
         border: 0 2px solid rgb(53, 54, 54);
         padding: 20px;
@@ -47,6 +47,12 @@
         justify-content: space-evenly;
         align-items: center;
         margin-top: 15px;
+    }
+    .nav_panel{
+        color: blue;
+        font-size: 18px;
+        font-weight: 500;
+        transition: .5s;
     }
     .nav_dashboard{
         color:rgb(43, 145, 158);

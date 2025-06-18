@@ -11,4 +11,8 @@ class PortfolioController extends Controller
    public function contact(){
         return view('admin.contact.contact');
     }
+
+    public function index(){
+        return view('home');
+    }
 }

@@ -10,6 +10,9 @@
                 <nav class="admin-nav">
                     <ul>
                         <li>
+                            <div class="nav_btn"><p class="nav_panel">Admin Panel</p></div>
+                        </li>
+                        <li>
                             <a href="/admin"><div class="nav_btn"><p class="nav_dashboard">Dashboard</p></div></a>
                         </li>
 
