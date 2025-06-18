@@ -415,3 +415,11 @@
 #47 C:\\Program Files\\Herd\\resources\\app.asar.unpacked\\resources\\valet\\server.php(139): require('C:\\\\xampp\\\\htdocs...')
 #48 {main}
 "} 
+[2025-06-17 05:20:34] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 30 seconds exceeded at C:\\Users\\Admin\\Desktop\\Laravel\\Portfolio-Websites\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:67)
+[stacktrace]
+#0 {main}
+"} 
+[2025-06-17 05:20:34] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 30 seconds exceeded at C:\\Users\\Admin\\Desktop\\Laravel\\Portfolio-Websites\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:67)
+[stacktrace]
+#0 {main}
+"} 

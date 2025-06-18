@@ -11,31 +11,76 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
 body{
     background-color: white;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
+
+.a{
+    color: #000;
+    text-decoration: none;
+}
+.log{
+  display: flex;
+  justify-items: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+.navbar{
+    width: 100%;
+    padding: 25px 9%;
+    background:rgb(246, 247, 244);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+.navbar ul {
+    display: flex;
+    justify-content : space-evenly;
+    width: 100%;
+    gap:20px
+
+}
+.navbar ul li{
+    list-style: none;
+    /* margin-left: 35px; */
+}
+.navbar ul li a {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .5s;
+
+}
+.navbar ul li a:hover {
+    color: blue;
+}
 .container{
     width: relative;
+    justify-self: center;
     width: 100%;
     max-width: 1000px;
     min-height: 100px;
-    margin: 50px;
+    margin:100px 50px;
     background:rgb(246, 247, 244);
     /* display: grid;
     grid-template-columns: 1fr 2fr;  */
     box-shadow: 0 36px 60px rgba(0, 0, 0, 0.1)  ;
 }
-.container .left_side{
-    position: relative;
-    background-color: pink;
-    /* background: blue; */
-    padding: 40px;
+.content{
+    margin: 30px 20px;
+ 
 }
 .profiletext{
     position: relative;
@@ -47,11 +92,14 @@ body{
 }
  .image{
     position: relative;
-    left:400px;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    /* overflow: hidden; */
+    overflow: hidden;
+    object-fit: cover;
+    
 }
 .profiletext .image img{
     /* position: absolute; */
@@ -62,7 +110,7 @@ body{
     object-fit: cover;
 }
 .profiletext h2{
-    color: #fff;
+    color: black;
     font-size: 1.5em ;
     margin-top: 20px;
     text-transform: uppercase;
@@ -71,15 +119,15 @@ body{
     line-height: 1.4em;
 }
 .profiletext h2 span{
-    color: #fff;
+    color: black;
     font-size: 1.2rem;
     font-weight: 400;
 }
 .contactinfo{
    padding-top: 40px;
 }
-.tittle{
-    color: #fff;
+.title{
+    color: black;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
@@ -103,59 +151,54 @@ body{
     color:#03a9f4;
 }
 .contactinfo ul li span{
-    color: #fff;
+    color: black;
     font-weight: 300;
-}
-.contactinfo.education li{
-    margin-bottom: 15px;
-  
-}
-.contactinfo.education h5{
-    color: #03a9f4;;
-    font-weight: 500;
-}
-.contactinfo.education h4:nth-child(2){
-    color: #fff;
-    font-weight: 500;
-
-}
-.contactinfo.education h4{
-    color: #fff;
-    font-weight: 300;
-}
-.contactinfo.language .percent{
-    position: relative;
-    width: 100%;
-    height: 6px;
-    background-color: #081921;
-    display: block;
-    margin-top: 5px;
-}
-.contactinfo.language .percent div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #f11545;
-}
-.container .right_side{
-    font-size: 0.8em;
-    font-weight: 300;;
-}
-.about{
-    margin-bottom: 50px;
-}
-.about :last-child{
-    margin-bottom: 0;
 }
 .title2{
     color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 p{
     color: #333;
+}
+.tableheads{
+    background-color: #f2f2f2;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+}
+.tableheads1{
+    background-color: #f9f9f9;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+}
+th, td {
+  padding: 15px;
+  font-size: 15px;
+}
+table, td, th {  
+  border: 2px solid #ddd;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.lang ul li{
+    position: relative;
+    list-style: square;
+    font-size: 18px;
+    margin: 10px 20px;
+    cursor: pointer;
+
 }
 .about .box{
     display: flex;
@@ -185,21 +228,46 @@ p{
 }
 .skills .box h4{
    text-transform: uppercase;
-   color:  #848c99;
+   color:black;
     font-weight: 500;
+}
+.skills ul li{
+    position: relative;
+    list-style: square;
+    font-size: 18px;
+    margin: 10px 20px;
+    cursor: pointer;
+
 }
      </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+     <nav class="navbar">
+        <div class="log">
+            <a href="#" class="logo">Portfolio</a>
+        </div>
+
+        <div class="nav">
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Resume</a></li>
+        </ul>
+        </div>
+
+    </nav>
+    
     <div class="container">
 
-        <div class="left_side">
+        <div class="content">
             <div class="image">
                     <img src="profile.png" alt="">
-                </div>   
+             </div>   
             <div class="profiletext">
-                <h2>Dipak Kumar Chaudhary<br><span>Web Development</span></h2>
+                <h2>Dipak Kumar Chaudhary<br><span>Web Developer</span></h2><br><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit necessitatibus quia dolorum non sed dolor, cumque officiis minus totam, laboriosam natus facilis accusantium deserunt. Fugiat saepe sed esse reiciendis. Reprehenderit.</span>
             </div>
             <div class="contactinfo">
                 <h3 class="title">Contact Info</h3>
@@ -218,8 +286,8 @@ p{
                         <span class="text">chydipak6366@gmail.com</span>
                     </li>
                      <li>
-                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-                        <span class="text">linkedin</span>
+                        <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+                        <span class="text">https://github.com/Dipakherald</span>
                     </li>
                 </ul>
                 
@@ -227,84 +295,94 @@ p{
 
             <div class="contactinfo education">
                 <h3 class="title">Education</h3>
-                <ul>
-                     <li>
-                        <h5>2020-2024</h5>
-                        <h4>Bsc.Csit</h4>
-                        <h4>University Name</h4>
-                     
-                    </li>
-                     <li>
-                        <h5>2017-2020</h5>
-                        <h4>+2</h4>
-                        <h4>Nepal Mega College</h4>
-                    </li>
-                </ul>
+                <div class="table">
+                    <table>
+                        <tr class="tableheads">
+                            <th>S.N</th>
+                            <th>Institution Name/Address</th>
+                            <th>Education</th>
+                            <th>Passed Year</th>
+                        </tr>
+                        <tr class="tableheads1">
+                            <th>1.</th>
+                            <th>Herald College, Naxal-Bhagwatibahal </th>
+                            <th>Bsc.Csit</th>
+                            <th>2024</th>
+                        </tr>
+                        <tr class="tableheads1">
+                            <th>2.</th>
+                            <th>Nepal Mega College, Babarmahal </th>
+                            <th>+2</th>
+                            <th>2020</th>
+                        </tr>
+                          
+                    </table>
+                </div>
+                
                 
             </div>
 
-             <div class="contactinfo lang">
+             <div class="lang">
                 <h3 class="title">Language</h3>
                 <ul>
                      <li>
-                        <span class="icon"></span>
-                        <span class="percent">Nepali</span>
-                        <div style="width: 85%;"></div>
+                        <span class="icon">Nepali</span>
                      
                     </li>
                      <li>
-                        <span class="icon"></span>
-                        <span class="percent">English</span>
-                        <div style="width: 75%;"></div>
+                        <span class="icon">English</span>
+
                     </li>
                 </ul>
                 
             </div>
 
-        <div class="right_side">
-            <div class="about">
-                <h2 class="title2">Profile</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore odio voluptate laborum autem suscipit mollitia officiis velit nisi, dolores, magnam quisquam et illum explicabo blanditiis fugit possimus ipsa aperiam quas!</p>
-            </div>
-
-            <div class="about">
-                <h2 class="title2">Experiences</h2>
-                <div class="box">
-                    <div class="year_company">
-                        <h5>2022-present</h5>
-                        <h5>Company Name</h5>
-                    </div>
-                    <div class="text">
-                        <h4>Frontend Developer</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, dolorum inventore.</p>
-                    </div>
-                </div>
-
-                   <div class="box">
-                    <div class="year_company">
-                        <h5>2020-2022</h5>
-                        <h5>Company Name</h5>
-                    </div>
-                    <div class="text">
-                        <h4>Backend Developer</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, dolorum inventore.</p>
-                    </div>
+            <div class="contactinfo project">
+                <h3 class="title2">Projects</h3>
+                <div class="table">
+                    <table>
+                        <tr class="tableheads">
+                            <th>S.N</th>
+                            <th>Project Name</th>
+                            <th>Skills</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="tableheads1">
+                            <th>1.</th>
+                            <th>TODO app</th>
+                            <th>HTML, CSS, PHP</th>
+                            <th>Creating Homepage </th>
+                        </tr>
+                        <tr class="tableheads1">
+                            <th>2.</th>
+                            <th>Portfolio Website</th>
+                            <th>HTML, CSS, PHP</th>
+                            <th>Creating Homepage,Resumefront,contact front page </th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="about skills">
-                <h2 class="title2">Skills</h2>
-                <div class="box">
-                    <h4>HTML</h4>
-                </div>
-                 <div class="box">
-                    <h4>CSS</h4>
-                </div>
-                 <div class="box">
-                    <h4>JAVASCRIPT</h4>
-                </div>
-                 <div class="box">
-                    <h4>PHP</h4>
-                </div>
+                <h3 class="title2">Skills</h3>
+                    <ul>
+                     <li>
+                        <span class="icon">HTML</span>
+                    </li>
+                     <li>
+                        <span class="icon">CSS</span>
+                    </li>
+                        <li>
+                            <span class="icon">JavaScript</span>    
+                        </li>
+                        <li>
+                            <span class="icon">PHP</span>               
+                        </li>
+                        <li>
+                            <span class="icon">MySQL</span>
+                        </li>
+                </ul>
+                    
+            
 
             </div>
        </div>
