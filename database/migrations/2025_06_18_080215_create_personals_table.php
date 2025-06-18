@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
-            $table->name();
-            $table->number();
-            $table->email();
-            $table->photo();
-            $table->address();
-            $table->github();
+            $table->string('name');
+            $table->bigInteger('number');
+            $table->string('email');
+            $table->string('photo');
+            $table->string('address');
+            $table->string('github');
             $table->timestamps();
             $table->softDeletes();
         });

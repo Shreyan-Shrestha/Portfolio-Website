@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Personal extends FormRequest
+class ResumeRequest extends FormRequest
 {
   
     public function authorize(): bool
@@ -20,13 +20,13 @@ class Personal extends FormRequest
     public function rules(): array
     {
         return [
-            "name"=> "required|string|max:255",
-            "number"=> "required|string|max:15",
-            "email"=> "required|email|max:100",
-            "address"=> "required|string|max:255",
-            "about"=> "nullable|text|max:500",
-            "photo"=> "nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
-            "github"=> "nullable|url|max:100",
+            "name"=>"required|string|max:255",
+            "number"=>"required|string|max:15",
+            "email"=>"required|email|max:100",
+            "address"=>"required|string|max:255",
+            "about"=>"required|text|max:500",
+            "photo"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:4048",
+            "github"=>"required|url|max:100",
         ];
     }
 }

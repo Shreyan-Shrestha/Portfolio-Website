@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\ResumeRequest;
 use App\Models\Contact; 
+use App\Models\Personal;
 use App\Models\Skills;
+
 
 class AdminController extends Controller
 {
@@ -32,6 +35,19 @@ class AdminController extends Controller
     public function destroy($id){
         Contact::where('id', $id)->delete();
         return redirect('/viewcontact');
+    }
+
+    public function personalindex()
+    {
+        $personals = Personal::latest()->get();
+        return view('admin.personal.index', ['personals' => $personals]);
+    }
+
+    public function resume(ResumeRequest $request)
+    {
+        $validated = $request->validated();
+        Personal::create($validated);
+        return redirect('/resume');
     }
 }
 
