@@ -1,12 +1,10 @@
 @extends('partials.layout')
     <style>
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  min-height: 99vh;
   width: 100%;
-  padding: 0 10px;
+    background-color: #f0f0f0;
+    color: #333;
 }
 * {
     padding: 0;
@@ -19,26 +17,18 @@ a{
     text-decoration: none;
     color: inherit;
 }
-body {
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
-}
+
 .a{
     color: #000;
     text-decoration: none;
 }
 .navbar{
-    position: fixed;
-    top:0;
-    left: 0;
     width: 100%;
     padding: 25px 9%;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
     
 }
 .navbar .logo {
@@ -47,11 +37,13 @@ body {
 }
 .navbar ul {
     display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
 
 }
 .navbar ul li{
     list-style: none;
-    margin-left: 35px;
 }
 .navbar ul li a {
     color: #2b9e2b;
@@ -63,13 +55,17 @@ body {
     color: #a1c500;
 }
 
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .wrapper{
   width: 400px;
-  background-color:pink;
   border-radius: 8px;
   padding: 60px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  
+  box-shadow: 0 2px 10px rgba(0.05,0.05);
 }
 
 h2{
@@ -80,11 +76,6 @@ h2{
 form {
   display: flex;
   flex-direction: column;
-}
-.container {
-  position: relative;
-  border-bottom: 2px solid #ccc;
-  margin: 15px 0;
 }
 
 
@@ -129,15 +120,51 @@ button {
   border-color: #fff;
   background: rgba(28, 27, 83, 0.15);
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+.navbar{
+  width: 100%;
+  padding: 25px 9%;
+  background:rgb(246, 247, 244);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    
+}
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+.navbar ul {
+    display: flex;
+    justify-content : space-evenly;
+    width: 100%;
+    gap:20px
 
-       
+}
+.navbar ul li{
+    list-style: none;
+}
+.navbar ul li a {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .5s;
 
-    </style>
+}
+.navbar ul li a:hover {
+    color: blue;
+
+}   
+</style>
 
  @section('content')
 @section('title', 'Portfolio Website | Contact')
 
-    <div class="wrapper">
+<div class="content">
+  <div class="wrapper">
         
           <div class=h2>
             <h2>Leave me a Message</h2>
@@ -155,8 +182,8 @@ button {
           </div>
           
       <form method="Post" action="/contact" >
-              @csrf
-              <div class="container">
+        @csrf
+        <div class="container">
         <label for="name"><b>Name</b></label>
         <input type="text" placeholder="Enter Your Name" name="name" required>
 
@@ -170,8 +197,9 @@ button {
           <button class="btn_cancel"><a href="/">Cancel</a></button>
           <button class="btn_submit" type="submit">Submit</button>
 
-            </form>
+        
         </div>
       </form>
-    </div>
+  </div>
+</div>
 @endsection

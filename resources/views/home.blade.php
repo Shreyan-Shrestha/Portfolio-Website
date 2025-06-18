@@ -136,22 +136,6 @@ footer {
 </style>
 @section('title', 'Portfolio | Home')
 @section('content')
-    <nav class="navbar">
-      <div class="log">
-        <a href="#" class="logo">Portfolio</a>
-      </div>
-
-      <div class="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html">Projects</a></li>
-            <button><a href="/contact">Contact</a></li></button>
-            <li><a href="services.html">Resume</a></li>
-        </ul>
-
-      </div>
-    </nav>
     <section class="hero">
         <img src="profile.png" alt="Profile Photo" class="profile-photo"/>
         <div class="hero-text">
