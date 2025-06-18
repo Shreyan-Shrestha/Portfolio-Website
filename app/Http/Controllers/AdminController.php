@@ -18,6 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         $contactCount = Contact::count();
+        $skillCount = Skills::count();
         $contacts = Contact::latest()->get();
         return view('admin.admin',['contacts'=> $contacts, 'contactCount' => $contactCount]);
     }
