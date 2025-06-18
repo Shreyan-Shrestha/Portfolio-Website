@@ -145,7 +145,7 @@ footer {
         <h3>I'm a Frontend Developer</h3>
         <p>I’m a product designer passionate about creating intuitive and impactful digital solutions. Explore my portfolio to see how I blend creativity with user-centered design to solve real-world problems.</p>
         <a href="/resume" class="btn">View Resume</a>
-        <a href="https://github.com/Shreyan-Shrestha" target="_blank" rel="noopener noreferrer" class="btn">Github</a>
+        <a href="https://github.com/Shreyan-Shrestha target="_blank" rel="noopener noreferrer" class="btn">Github</a>
       </div>
     </section>
 
