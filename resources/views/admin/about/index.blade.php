@@ -101,6 +101,18 @@
         padding: 2px;
     }
 
+    .img_wrapper {
+        justify-self: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;}
     .btn_add {
         background-color:rgb(49, 137, 189);
         float: right;
@@ -166,25 +178,25 @@
                             </div>
                         </li>
                         <li>
-                            <div><strong>Name:</strong> {{ $about['name'] }}</div>
+                            <div><strong>Name:</strong> <p>{{ $about['name'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>Email:</strong> {{ $about['email'] }}</div>
+                            <div><strong>Email:</strong> <p>{{ $about['email'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>Phone:</strong> {{ $about['phone'] }}</div>
+                            <div><strong>Phone:</strong> <p>{{ $about['phone'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>Address:</strong> {{ $about['address'] }}</div>
+                            <div><strong>Address:</strong><p> {{ $about['address'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>Github link:</strong> {{ $about['github'] }}</div>
+                            <div><strong>Github link:</strong><p> {{ $about['github'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>About in short:</strong> {{ $about['aboutshort'] }}</div>
+                            <div><strong>About in short:</strong><p> {{ $about['aboutshort'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>About in long:</strong> {{ $about['aboutlong'] }}</div>
+                            <div><strong>About in long:</strong><p> {{ $about['aboutlong'] }}</p></div>
                     </ul>
                     @empty
                     <div class="empty-state">

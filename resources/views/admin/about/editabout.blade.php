@@ -2,35 +2,39 @@
 
 @section('title', 'Admin Panel | Edit About')
 <style>
-    * {
+    *{
         list-style: none;
     }
 
-    .container {
-        display: flex;
-        width: 90%;
-    }
-
-    .content {
-        width: 90%;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        overflow-y: auto;
-    }
-
-    .nav_bt:onhover {
+    .container{
+    display: flex;
+    width: 90%;
+}
+.content {
+    width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+    .nav_bt:onhover{
         cursor: pointer;
         opacity: 1;
     }
 
-    a {
-        text-decoration: none;
-        color: inherit;
+    .admin-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        height: fit-content;
+        padding: 2px;
     }
 
-    .admin-nav {
-        width: 15%;
+    a{
+    text-decoration: none;
+    color: inherit;
+    }
+    .admin-nav{
+        width: 10%;
         height: 90vh;
         background-color: #f8f9fa;
         border: 0 2px solid rgb(53, 54, 54);
@@ -38,51 +42,38 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .navbar {
-        display: flex;
+    .navbar{
+        display : flex;
         justify-content: space-evenly;
         align-items: center;
         margin-top: 15px;
     }
-
-    .nav_panel {
+    .nav_panel{
         color: blue;
         font-size: 18px;
         font-weight: 500;
         transition: .5s;
     }
-
-    .nav_quals {
-        color: rgb(43, 145, 158);
+    .nav_quals{
+        color:rgb(43, 145, 158);
         font-size: 18px;
         font-weight: 500;
         transition: .5s;
     }
-
-    .nav_return {
-        color: rgb(192, 8, 8);
+    .nav_return{
+        color:rgb(192, 8, 8);
         font-size: 18px;
         font-weight: 500;
         transition: .5s;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f8f8;
-        margin: 0;
-        padding: 0;
     }
 
     .form-container {
-        
         background-color: #fff;
-        width: 60%;
         max-width: 500px;
-        height: 80vh;
-        margin: 15px auto;
-        padding: 15px;
+        margin: 40px auto;
+        padding: 25px;
         border-radius: 10px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        overflow-y: auto;
     }
 
     h2 {
@@ -132,10 +123,6 @@
         color: white;
         margin-right: 2px;
     }
-    #aboutlong{
-        height: 100px;
-        resize: auto;
-    }
 </style>
 
 @section('content')
@@ -182,7 +169,7 @@
             <input type="text" id="aboutlong" name="aboutlong" maxlength="800" rows="4" required></textarea>
 
             <div class="btn-group">
-                <a href="/about"><button class="btn_cancel"> Back</button></a>
+                <a href="/admin"><button class="btn_cancel"> Back</button></a>
                 <button type="submit" class="btn_add">Submit</button>
             </div>
         </form>

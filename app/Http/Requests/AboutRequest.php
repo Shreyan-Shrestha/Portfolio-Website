@@ -23,14 +23,14 @@ class AboutRequest extends FormRequest
     {
         return [
             "name"=>"required|string|max:255",
-            "jobtitle"=>"required|string|max255",
+            "jobtitle"=>"required|string|max:255",
             "number"=>"required|string|max:15",
             "email"=>"required|email|max:100",
             "address"=>"required|string|max:255",
             "aboutshort"=>"required|string|max:100",
-            "aboutlong"=>"required|text|max:800",
-            "photo"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:4048",
-            "github"=>"required|url|max:100",
+            "aboutlong"=>"required|string|max:800",
+            "photo"=>"nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
+            "github"=>"required|string|max:100",
         ];
     }
 }

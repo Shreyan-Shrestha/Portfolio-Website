@@ -110,13 +110,12 @@ class AdminController extends Controller
    public function aboutstore(AboutRequest $request)
 {
         $validated = $request->validated();
-        if ($request->hasFile('photo')) {
-            if ($request->file('photo')->isValid()) {
-                $path = $request->file('photo')->store('images', 'public');
-                $validated['photo'] = 'storage/' . $path;
-            } 
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
+            $path = $request->file('photo')->store('images', 'public');
+            $validated['photo'] = 'storage/' . $path; // Or use Storage::url($path)
         }
         About::create($validated);
+
         return redirect('/about')->with('success', 'Personal Information added successfully!');
 }
     public function abouteditView($id)
