@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdminController;
-use App\Models\Contact;
+
 Route::get('/contact', [PortfolioController::class, 'contact']);
 Route::get('/viewcontact', [AdminController::class, 'contactindex']);
 Route::post('/contact', [AdminController::class, 'contactstore']);
@@ -29,4 +29,6 @@ Route::delete('/deletequal/{id}', [AdminController::class,'destroyqual']);
 Route::get('/about', [AdminController::class,'about']);
 Route::get('/addabout', [AdminController::class,'aboutview']);
 Route::post('/about', [AdminController::class,'aboutstore']);
+Route::get('/editaboutview/{id}', [AdminController::class,'abouteditview']);
+Route::put('/editabout/{id}', [AdminController::class,'aboutedit']);
 

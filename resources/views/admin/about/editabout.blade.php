@@ -139,37 +139,39 @@
             </ul>
         </div>
         @endif
-        <form action="/about" method="POST">
+        <form action="/editabout/1" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
+            <input value="{{ $about['id'] }}" name="id" hidden>
             <label for="photo">Profile Photo</label>
             <input type="file" id="photo" name="photo">
 
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required value="{{$about['name']}}">
 
             <label for="jobtitle">Job Title</label>
-            <input type="text" id="jobtitle" name="jobtitle" required>
+            <input type="text" id="jobtitle" name="jobtitle" required value="{{$about->jobtitle}}">
 
             <label for="address">Address</label>
-            <input type="text" id="address" name="address" required>
+            <input type="text" id="address" name="address" required value="{{$about->address}}">
 
             <label for="number">Phone</label>
-            <input type="tel" id="phone" name="number" required>
+            <input type="tel" id="phone" name="number" required value="{{$about->number}}">
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required value="{{$about->email}}">
 
             <label for="github">Github Url</label>
-            <input type="github" id="github" name="github" required>
+            <input type="github" id="github" name="github" required value="{{$about->github}}">
 
             <label for="aboutshort">About in Short(max. 100 characters)</label>
-            <input type="text" id="about-short" name="aboutshort" maxlength="100" required>
+            <input type="text" id="about-short" name="aboutshort" maxlength="100" required value="{{$about->aboutshort}}">
 
             <label for="aboutlong">About in detail(upto 800 characters)</label>
-            <input type="text" id="aboutlong" name="aboutlong" maxlength="800" rows="4" required></textarea>
+            <input type="text" id="aboutlong" name="aboutlong" maxlength="800" rows="4" required value="{{$about->aboutlong}}">
 
             <div class="btn-group">
-                <a href="/admin"><button class="btn_cancel"> Back</button></a>
+                <a href="/about"><button class="btn_cancel"> Back</button></a>
                 <button type="submit" class="btn_add">Submit</button>
             </div>
         </form>

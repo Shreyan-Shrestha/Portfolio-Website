@@ -167,6 +167,7 @@
         <div class="resume-card">
             <div class="box_about">
                 <div class="admin-actions">
+                    <a href="/editaboutview/1"><button class="btn_edit">Edit</button></a>
                     <a href="/addabout"><button class="btn_add">Add</button></a>
                 </div>
                 <div class="section">
@@ -184,7 +185,7 @@
                             <div><strong>Email:</strong> <p>{{ $about['email'] }}</p></div>
                         </li>
                         <li>
-                            <div><strong>Phone:</strong> <p>{{ $about['phone'] }}</p></div>
+                            <div><strong>Phone:</strong> <p>{{ $about['number'] }}</p></div>
                         </li>
                         <li>
                             <div><strong>Address:</strong><p> {{ $about['address'] }}</p></div>

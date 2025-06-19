@@ -118,7 +118,7 @@ class AdminController extends Controller
 
         return redirect('/about')->with('success', 'Personal Information added successfully!');
 }
-    public function abouteditView($id)
+    public function abouteditview($id)
     {
         $about = About::where('id', $id)->get();
         return view('admin.about.editabout', ['about' => $about[0]]);
@@ -127,6 +127,17 @@ class AdminController extends Controller
     public function aboutview()
     {
         return view('admin.about.aboutform');
+    }
+
+    public function aboutedit(AboutRequest $request)
+    {
+        $validated = $request->validated();
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
+            $path = $request->file('photo')->store('images', 'public');
+            $validated['photo'] = 'storage/' . $path; // Or use Storage::url($path)
+        }
+        About::where('id', $request['id'])->update($validated);
+        return redirect('/about')->with('success', 'Personal Information updated successfully!');
     }
 }
 
