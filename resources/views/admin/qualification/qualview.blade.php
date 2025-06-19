@@ -215,15 +215,6 @@
                                 </div>
                             </div>
                         @empty
-                <table>
-                    <thead>
-                        <tr>
-                            <th>S.N</th>
-                            <th>Institute Name / Address</th>
-                            <th>Level / Degree</th>
-                            <th>Percentage / CGPA</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
                             <td colspan="4" class="no-data">No Education details added yet. Go to Qualification tab and
