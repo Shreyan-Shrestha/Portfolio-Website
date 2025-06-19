@@ -27,7 +27,7 @@
                             <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Projects</p></div></a>
                         </li>
                         <li>
-                            <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Resume</p></div></a>
+                            <a href="/resumeadmin"><div class="nav_btn"><p class="nav_resume">Resume</p></div></a>
                         </li>
                         <li>
                             <a href="/viewcontact"><div class="nav_btn"><p class="nav_messages">Messages</p></div></a>
