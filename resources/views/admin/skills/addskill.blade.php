@@ -92,6 +92,7 @@
                     @csrf
                     <label for="name">Skill Name:</label>
                     <input type="text" name="name" required>
+                    <a href="/skills"><button class="btn_cancel">Cancel</button></a>
                     <button type="submit" class="btn_add">Add</button>
                 </form>
         </div>

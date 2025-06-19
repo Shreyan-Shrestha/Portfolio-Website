@@ -112,7 +112,7 @@
     </div>
     @endif
 
-    <form class="form" method="POST" action="/skilledit/{{ $skill['id'] }}">
+    <form class="form" method="POST" action="/qualedit/{id}">
         @csrf
         @method("PUT")
         <input value="{{ $skill['id'] }}" name="id" hidden>
