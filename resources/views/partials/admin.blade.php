@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@yield('title', 'Admin Panel')</title>
-        <meta name="description" content="Admin Panel for the Portfolio Website">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>@yield('title', 'Portfolio')</title>
+        <meta name="description" content="Portfolio Website">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+    </body>
+</html>
         <div class="container">
                 <nav class="admin-nav">
                     <ul>
@@ -24,10 +28,13 @@
                             <a href="/skills"><div class="nav_btn"><p class="nav_skills">Skills</p></div></a>
                         </li>
                         <li>
+                            <a href="/qualification"><div class="nav_btn"><p class="nav_quals">Qualifications</p></div></a>
+                        </li>
+                        <li>
                             <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Projects</p></div></a>
                         </li>
                         <li>
-                            <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Resume</p></div></a>
+                            <a href="/projectindex"><div class="nav_btn"><p class="nav_resume">Resume</p></div></a>
                         </li>
                         <li>
                             <a href="/viewcontact"><div class="nav_btn"><p class="nav_messages">Messages</p></div></a>

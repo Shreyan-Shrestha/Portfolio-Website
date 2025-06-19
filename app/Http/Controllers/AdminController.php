@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\SkillRequest;
-use App\Models\Contact; 
+use App\Http\Requests\QualificationRequest;
+use App\Models\Contact;
+use App\Models\Qualification;
 use App\Models\Skills;
 
 class AdminController extends Controller
@@ -58,13 +60,44 @@ class AdminController extends Controller
     public function skilledit(SkillRequest $request)
     {
         $validated = $request->validated();
-       $fun= Skills::where('id', $request['id'])->update($validated);
+        Skills::where('id', $request['id'])->update($validated);
         return redirect('/skills');
     }
 
     public function destroyskill($id){
         Skills::where('id', $id)->delete();
         return redirect('/skills')->with('success', 'Skill deleted successfully!');
+    }
+
+    public function qualifications(){
+        $qualifications=Qualification::latest()->get();
+        return view('admin.qualification.qualview', ['qualifications'=> $qualifications]);
+    }
+
+    public function qualview(){
+        return view('admin.qualification.qualform');
+    }
+
+    public function qualform( QualificationRequest $request){
+         $validated = $request->validated();
+        Qualification::create($validated);
+        return redirect('/qualification')->with('success', 'Skill added successfully!');
+    }
+
+    public function destroyqual($id){
+        Qualification::where('id', $id)->delete();
+        return redirect('/qualification')->with('success', 'Skill deleted successfully!');
+    }
+
+     public function qualeditView($id){
+        $quals = Qualification::where('id', $id)->get();
+        return view('admin.qualification.editqual', ['quals'=> $quals[0]]);
+    }
+    public function qualedit(QualificationRequest $request)
+    {
+        $validated = $request->validated();
+       Qualification::where('id', $request['id'])->update($validated);
+        return redirect('/qualification');
     }
 }
 

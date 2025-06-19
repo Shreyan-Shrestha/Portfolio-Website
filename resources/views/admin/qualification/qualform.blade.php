@@ -1,9 +1,6 @@
 @extends('partials.admin')
-
-@section('title', 'Admin Panel | Skills')
-
-<style>
-    *{
+    <style>
+ *{
         list-style: none;
     }
 
@@ -55,7 +52,7 @@
         font-weight: 500;
         transition: .5s;
     }
-    .nav_skills{
+    .nav_quals{
         color:rgb(43, 145, 158);
         font-size: 18px;
         font-weight: 500;
@@ -112,52 +109,53 @@
         cursor: pointer;
         border-radius: 5px;
     }
-    </style>
+    .admin-actions{
+        margin-bottom: 8px;
+        width: 80%;
+    }
+</style>
+
+ 
+@section('title', 'Admin Panel | Add Qualification')
 
 @section('content')
-    <div class="content">
-        <h2>Manage your skills here.</h2>
-        <h3>Skills:</h3>
-        @if ($errors->any())
-            <div>
-                <strong>Whoops!</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    <li></li>
-                </ul>
-            </div>
-            @endif
-        <div class="box_skills">
-            <div class="admin-actions">
-            <a href="/addskill"><button class="btn_add">Add</button></a>
-        </div>
-
-        <div class="admin-info">
-            <div class="box_skills">
-                <ul class="skills-list">
-                @forelse($skills as $skill)
-                    <li>
-                        <div class="skill-item">
-                            <p>{{ $skill->name }}</p>
-                            <div>
-                            <a href="/skilleditview/{{$skill['id']}}"> <button class="btn_edit">Edit</button></a>
-                            <form action="/deleteskill/{{ $skill['id'] }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn_del">Delete</button>
-                            </form>
-                            </div>
-                        </div>    
-                    </li>                    
-                @empty
-                    <p>No skills added yet.</p>
-                @endforelse
-                </ul>
-            </div>
-        </div>
-        </div>
+<div class="content">
+  <div class="wrapper">
         
-    </div>           
+          <div class=h2>
+            <h2>Add an Educational info:</h2>
+          </div>
+          <div>
+            @if ($errors->any())
+            <strong>Whoops!</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+                <li></li>
+            </ul>
+            @endif
+          </div>
+          
+      <form method="Post" action="/qualform" >
+        @csrf
+        <div class="qual_form">
+        <label for="institute-detail"><b>Institute Name and Address</b></label>
+        <input type="text" placeholder="Name and Address" name="institute-detail" required>
+
+        <label for="email"><b>Degree or Level</b></label>
+        <input type="text" placeholder="Board or Degree" name="level" required>
+
+        <label for="marks"><b>Marks or CGPA obtained</b></label>
+        <input type="text" placeholder="Obtained % or CGPA" name="marks" required>
+
+        <div class="buttons">
+          <button class="btn_cancel"><a href="/admin">Cancel</a></button>
+          <button class="btn_submit" type="submit">Submit</button>
+
+        
+        </div>
+      </form>
+  </div>
+</div>
 @endsection
