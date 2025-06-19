@@ -58,7 +58,7 @@ class AdminController extends Controller
     public function skilledit(SkillRequest $request)
     {
         $validated = $request->validated();
-        Skills::where('id', $request['$id'])->update($validated);
+       $fun= Skills::where('id', $request['id'])->update($validated);
         return redirect('/skills');
     }
 

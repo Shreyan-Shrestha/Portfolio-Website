@@ -118,7 +118,7 @@
         <input value="{{ $skill['id'] }}" name="id" hidden>
         <div class="box_skills">
             <label for="name">Skill:</label>
-            <input type="text" name="name" required>
+            <input type="text" name="name" required value="{{ $skill['name'] }}">
         </div>
         <div class="footer">
             <a href="/skills"><button class="cancel" type="button">Cancel</button></a>

@@ -142,7 +142,7 @@
                         <div class="skill-item">
                             <p>{{ $skill->name }}</p>
                             <div>
-                            <a href="skilledit/{{$skill['id']}}"> <button class="btn_edit">Edit</button></a>
+                            <a href="skilleditview/{{$skill['id']}}"> <button class="btn_edit">Edit</button></a>
                             <form action="/deleteskill/{{ $skill['id'] }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
