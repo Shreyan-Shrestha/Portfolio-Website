@@ -121,6 +121,7 @@ th, td {
             </div>
             <div class="box_skills">
                 <p>Skills</p>
+                <p>{{$skillCount}}</p>
             </div>
 
             <div class="box_msgs">
