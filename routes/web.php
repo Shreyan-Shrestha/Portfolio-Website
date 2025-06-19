@@ -26,3 +26,7 @@ Route::get('/qualeditview/{id}', [AdminController::class,'qualeditview']);
 Route::put('/qualedit/{id}', [AdminController::class,'qualedit']);
 Route::delete('/deletequal/{id}', [AdminController::class,'destroyqual']);
 
+Route::get('/about', [AdminController::class,'about']);
+Route::get('/addabout', [AdminController::class,'aboutview']);
+Route::post('/aboutform', [AdminController::class,'aboutstore']);
+

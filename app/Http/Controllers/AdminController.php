@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\SkillRequest;
 use App\Http\Requests\QualificationRequest;
-use App\Models\Contact;
+use App\Http\Requests\AboutRequest;
+use App\Models\Contact; 
 use App\Models\Qualification;
 use App\Models\Skills;
-
+use App\Models\About;
 class AdminController extends Controller
 {
     public function contactindex()
@@ -98,6 +99,35 @@ class AdminController extends Controller
         $validated = $request->validated();
        Qualification::where('id', $request['id'])->update($validated);
         return redirect('/qualification');
+    }
+
+    public function about()
+    {
+        $abouts = About::latest()->get();
+        return view('admin.about.index', ['abouts' => $abouts]);
+    }
+
+   public function aboutstore(AboutRequest $request)
+{
+        $validated = $request->validated();
+        if ($request->hasFile('photo')) {
+            if ($request->file('photo')->isValid()) {
+                $path = $request->file('photo')->store('images', 'public');
+                $validated['photo'] = 'storage/' . $path;
+            } 
+        }
+        About::create($validated);
+        return redirect('/about')->with('success', 'Personal Information added successfully!');
+}
+    public function abouteditView($id)
+    {
+        $about = About::where('id', $id)->get();
+        return view('admin.about.editabout', ['about' => $about[0]]);
+    }
+
+    public function aboutview()
+    {
+        return view('admin.about.aboutform');
     }
 }
 
