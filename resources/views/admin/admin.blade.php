@@ -42,6 +42,25 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    .btn_cancel {
+        background: rgb(158, 46, 38);
+        color: #fff;
+        width: 100%;
+        max-width: 120px;
+        height: 30px;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px; /* Vertically center text in anchor */
+        transition: background 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background: rgb(130, 35, 30);
+    }
     .navbar{
         display : flex;
         justify-content: space-evenly;
@@ -105,12 +124,34 @@ th, td {
         padding: 20px;
         color: #666;
 }
-
+#git{
+        color: blue;
+        text-decoration: none;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .btn_logout {
+        width: 95%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
     
 </style>
 
 @section('content')
     <div class="content">
+        <div class ="btn_logout">
+            <form method="POST" action="/logout">
+                    @csrf
+                    <button class ="btn_cancel" type="submit">Logout</button>
+                </form>
+        </div>
+        
         <h1>Admin Dashboard</h1>
         <h3>Welcome to the Admin Panel. Here you can manage your portfolio.</h3><br><br>
 
@@ -130,21 +171,41 @@ th, td {
             </div>
         </div>
         <h2>Projects:</h2>
-        <div class="admin_projects">
-            <table>
-                    <thead>
-                        <tr>
-                            <th>S.N</th>
-                            <th>Project Name</th>
-                            <th>Skills Used in Project</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <table>
+                        <thead>
                             <tr>
-                                <td colspan="4" class="no-data">No Projects added yet. Go to Projects and add to show here</td>
+                                <th>S.N</th>
+                                <th>Image</th>
+                                <th>Project Name</th>
+                                <th>Skills</th>
+                                <th>Description</th>
+                                <th>Link to github</th>
                             </tr>
+                        </thead>
+                        @forelse($projects as $project)
+                                        <div class="qual-item">
+                                            <tbody>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><img src=" {{asset($project['image']) }}" alt="Project Image"></td>
+                                                <td>{{ $project['name'] }}</td>
+                                                <td>{{ $project['skills'] }}</td>
+                                                <td>{{ $project['description'] }}</td>
+                                                <td>
+                                                        <a href="{{ $project['link'] }}" target="_blank" id="git">Go to github</a>
+                                                </td>                                                    
+                                                </td>
+                                            </tbody>
+                                        </div>
+
+                                </div>
+                            </div>
+                        @empty
+                         <tbody>
+                        <tr>
+                            <td colspan="7" class="no-data">No Projects added yet. Go to Projects tab and Add to show here</td>
+                        </tr>
                     </tbody>
+                    @endforelse
                 </table>
         </div>
     </div>

@@ -21,7 +21,7 @@
                         </li>
 
                         <li>
-                            <a href="/aboutindex"><div class="nav_btn"><p class="nav_about">About</p></div></a>
+                            <a href="/about"><div class="nav_btn"><p class="nav_about">Personal</p></div></a>
                         </li>
 
                         <li>
@@ -31,10 +31,7 @@
                             <a href="/qualification"><div class="nav_btn"><p class="nav_quals">Qualifications</p></div></a>
                         </li>
                         <li>
-                            <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Projects</p></div></a>
-                        </li>
-                        <li>
-                            <a href="/projectindex"><div class="nav_btn"><p class="nav_resume">Resume</p></div></a>
+                            <a href="/project"><div class="nav_btn"><p class="nav_projects">Projects</p></div></a>
                         </li>
                         <li>
                             <a href="/viewcontact"><div class="nav_btn"><p class="nav_messages">Messages</p></div></a>

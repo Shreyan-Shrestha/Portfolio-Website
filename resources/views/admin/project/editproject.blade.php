@@ -223,22 +223,27 @@
             @endif
         </div>
         <div class="form-container">
-            <form method="Post" action="/qualedit/{id}">
+            <form method="Post" action="/projectedit/{id}" enctype="multipart/form-data">
                 @csrf
                 @method("PUT")
-                <input value="{{ $quals['id'] }}" name="id" hidden>
+                <input value="{{ $projects['id'] }}" name="id" hidden>
                 <div class="qual_form">
-                    <label for="institute-detail"><b>Institute Name and Address</b></label>
-                    <input type="text" value="{{ $quals['institute-detail'] }}" name="institute-detail" required>
+                    <label for="image">Project Image</label>
+                    <input type="file" id="photo" name="image" value="{{ $projects['image'] }}">
+                    <label for="name"><b>Project Name</b></label>
+                    <input type="text" value="{{ $projects['name'] }}" name="name" required>
 
-                    <label for="email"><b>Degree or Level</b></label>
-                    <input type="text" value="{{ $quals['level'] }}" name="level" required>
+                    <label for="skills"><b>Skills</b></label>
+                    <input type="text" value="{{ $projects['skills'] }}" name="skills" required>
 
-                    <label for="marks"><b>Marks or CGPA obtained</b></label>
-                    <input type="text" value="{{ $quals['marks'] }}" name="marks" required>
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" value="{{ $projects['marks'] }}" name="description" required>
+
+                    <label for="link"><b>Link to github</b></label>
+                    <input type="text" value="{{ $projects['link'] }}" name="link" required>
 
                     <div class="btn_group">
-                        <button class="btn_cancel"><a href="/qualification">Cancel</a></button>
+                        <button class="btn_cancel"><a href="/projects">Cancel</a></button>
                         <button class="btn_submit" type="submit">Submit</button>
                     </div>
             </form>

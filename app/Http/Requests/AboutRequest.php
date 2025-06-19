@@ -4,9 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResumeRequest extends FormRequest
+class AboutRequest extends FormRequest
 {
-  
+    /**
+     * Determine if the user is authorized to make this request.
+     */
     public function authorize(): bool
     {
         return true;
@@ -21,14 +23,14 @@ class ResumeRequest extends FormRequest
     {
         return [
             "name"=>"required|string|max:255",
-            "jobtitle"=>"required|string|max255",
+            "jobtitle"=>"required|string|max:255",
             "number"=>"required|string|max:15",
             "email"=>"required|email|max:100",
             "address"=>"required|string|max:255",
             "aboutshort"=>"required|string|max:100",
-            "aboutlong"=>"required|text|max:800",
-            "photo"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:4048",
-            "github"=>"required|url|max:100",
+            "aboutlong"=>"required|string|max:800",
+            "photo"=>"nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
+            "github"=>"required|string|max:100",
         ];
     }
 }

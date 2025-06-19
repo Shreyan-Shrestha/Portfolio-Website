@@ -1,6 +1,6 @@
 @extends('partials.admin')
 
-@section('title', 'Admin Panel | Skills')
+@section('title', 'Admin Panel | Projects')
 
 <style>
     * {
@@ -152,12 +152,29 @@
         height: 50px;
         width: 100%;
     }
+    .no-data {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #git{
+        color: blue;
+        text-decoration: none;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
 </style>
 
 @section('content')
     <div class="content">
-        <h2>Manage your Education Details here.</h2>
-        <h3>Qualifications:</h3>
+        <h2>Manage your Project Details here.</h2>
+        <h3>Projects:</h3>
         @if ($errors->any())
             <div>
                 <strong>Whoops!</strong>
@@ -171,7 +188,7 @@
         @endif
         <div class="box_quals">
             <div class="admin-actions">
-                <a href="/addqualification"><button class="btn_add">Add</button></a>
+                <a href="/addproject"><button class="btn_add">Add</button></a>
             </div>
 
             <div class="admin-info">
@@ -180,26 +197,33 @@
                         <thead>
                             <tr>
                                 <th>S.N</th>
-                                <th>Institute Name / Address</th>
-                                <th>Level / Degree</th>
-                                <th>Percentage / CGPA</th>
+                                <th>Image</th>
+                                <th>Project Name</th>
+                                <th>Skills</th>
+                                <th>Description</th>
+                                <th>Link to github</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
-                        @forelse($qualifications as $quals)
+                        @forelse($projects as $project)
                                         <div class="qual-item">
                                             <tbody>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $quals['institute-detail'] }}</td>
-                                                <td>{{ $quals['level'] }}</td>
-                                                <td>{{ $quals['marks'] }}</td>
+                                                <td><img src=" {{asset($project['image']) }}" onerror="https://placehold.co/400.png"></td>
+                                                <td>{{ $project['name'] }}</td>
+                                                <td>{{ $project['skills'] }}</td>
+                                                <td>{{ $project['description'] }}</td>
+                                                <td>
+                                                        <a href="{{ $project['link'] }}" target="_blank" id="git">Go to github</a>
+                                                </td>    
                                                 <td class="td_btns">
                                                     <div class="td_btns">
                                                         <div>
-                                                            <a href="/qualeditview/{{$quals['id']}}"> <button
+                                                            <a href="/projecteditview/{{$project['id']}}"> <button
                                                                     class="btn_edit">Edit</button></a>
                                                         </div>
                                                         <div>
-                                                            <form method="POST" action="/deletequal/{{ $quals['id'] }}">
+                                                            <form method="POST" action="/deleteproject/{{ $project['id'] }}">
                                                                 @csrf
                                                                 @method("DELETE")
                                                                 <button class="btn-del"
@@ -215,14 +239,11 @@
                                 </div>
                             </div>
                         @empty
-                    <tbody>
+                         <tbody>
                         <tr>
-                            <td colspan="4" class="no-data">No Education details added yet. Go to Qualification tab and
-                                click Add to
-                                show here</td>
+                            <td colspan="7" class="no-data">No Projects added yet. Go to Projects tab and Add to show here</td>
                         </tr>
                     </tbody>
-                </table>
             @endforelse
             </table>
         </div>

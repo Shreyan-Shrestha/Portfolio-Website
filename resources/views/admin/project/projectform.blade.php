@@ -176,7 +176,7 @@
     <div class="wrapper">
 
         <div class=h2>
-            <h2>Add an Educational info:</h2>
+            <h2>Add Project details :</h2>
         </div>
         <div>
             @if ($errors->any())
@@ -190,23 +190,28 @@
             @endif
         </div>
 
-        <form method="Post" action="/qualform">
+        <form method="Post" action="/projectform" enctype="multipart/form-data">
             @csrf
             <div class="qual_form">
-                <label for="institute-detail"><b>Institute Name and Address</b></label>
-                <input type="text" placeholder="Name and Address" name="institute-detail" required>
+                <label for="image"><b>Image:</b></label>
+                <input type="file" name="image" placeholder="Upload Project Image">
 
-                <label for="email"><b>Degree or Level</b></label>
-                <input type="text" placeholder="Board or Degree" name="level" required>
+                <label for="name"><b>Project Name:</b></label>
+                <input type="text" name="name" placeholder="Enter Project Name" required>
 
-                <label for="marks"><b>Marks or CGPA obtained</b></label>
-                <input type="text" placeholder="Obtained % or CGPA" name="marks" required>
+                <label for="skills"><b>Skills:</b></label>
+                <input type="text" name="skills" placeholder="Enter Skills Used" required>
+
+                <label for="description"><b>Description:</b></label>
+                <input type="text" name="description" placeholder="Enter Project Description" required>
+
+                <label for="link"><b>Link to GitHub:</b></label>
+                <input type="text" name="link" placeholder="Enter Link to GitHub Repository">
+            </div>
 
                 <div class="buttons">
-                    <button class="btn_cancel"><a href="/admin">Cancel</a></button>
+                    <button class="btn_cancel"><a href="/projects">Cancel</a></button>
                     <button class="btn_submit" type="submit">Submit</button>
-
-
                 </div>
         </form>
     </div>
