@@ -42,6 +42,25 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    .btn_cancel {
+        background: rgb(158, 46, 38);
+        color: #fff;
+        width: 100%;
+        max-width: 120px;
+        height: 30px;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px; /* Vertically center text in anchor */
+        transition: background 0.3s;
+    }
+
+    .btn_cancel:hover {
+        background: rgb(130, 35, 30);
+    }
     .navbar{
         display : flex;
         justify-content: space-evenly;
@@ -115,11 +134,24 @@ th, td {
         object-fit: cover;
         border-radius: 5px;
     }
+    .btn_logout {
+        width: 95%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
     
 </style>
 
 @section('content')
     <div class="content">
+        <div class ="btn_logout">
+            <form method="POST" action="/logout">
+                    @csrf
+                    <button class ="btn_cancel" type="submit">Logout</button>
+                </form>
+        </div>
+        
         <h1>Admin Dashboard</h1>
         <h3>Welcome to the Admin Panel. Here you can manage your portfolio.</h3><br><br>
 
