@@ -152,7 +152,7 @@
             </ul>
         </div>
         @endif
-        <form action="/about" method="POST">
+        <form action="/about" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="photo">Profile Photo</label>
             <input type="file" id="photo" name="photo">

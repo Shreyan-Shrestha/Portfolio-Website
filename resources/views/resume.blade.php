@@ -142,7 +142,7 @@
     .contactinfo ul li {
         position: relative;
         list-style: none;
-        margin: 10px 0;
+        margin: 10px 70px;
         cursor: pointer;
 
     }
@@ -157,6 +157,11 @@
     .contactinfo ul li span {
         color: black;
         font-weight: 300;
+    }
+
+    .about-skills ul{
+        margin-left: 60px;
+        margin-bottom: 5px;
     }
 
     .title2 {
@@ -186,23 +191,47 @@
         font-size: 16px;
     }
 
-    th,
-    td {
-        padding: 15px;
-        font-size: 15px;
+    th {
+        cursor: pointer;
     }
 
     table,
     td,
     th {
-        border: 2px solid #ddd;
-        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
     }
 
     table {
         border-collapse: collapse;
+        width: 90%;
+        justify-self: center;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+
+    .no-data {
+        text-align: center;
+        padding: 20px;
+        color: #666;
+    }
+
+    .admin-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .box_quals {
+        justify-self: center;
         width: 100%;
-        margin-bottom: 40px;
+    }
+    td .td_btn{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
     }
 
     .lang ul li {
@@ -265,6 +294,20 @@
         font-size: 16px;
         padding: 20px;
     }
+    #git{
+        color: blue;
+        text-decoration: none;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .table{
+        margin-bottom: 10px;
+    }
+    
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -366,7 +409,7 @@
                         <span class="icon">{{$skill['name']}}</span>
                     </li>
                 @empty
-                    <li class="no-data">No skills added yet. Go to Skills tab and click Add to show here</li>
+                    <li class="no-data">No skills added yet. Go to Skills tab and Add to show here</li>
                 @endforelse
             </ul>
         </div>
@@ -375,24 +418,40 @@
             <h3 class="title2">Projects</h3>
             <div class="table">
                 <table>
-                    <tr class="tableheads">
-                        <th>S.N</th>
-                        <th>Project Name</th>
-                        <th>Skills</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr class="tableheads1">
-                        <th>1.</th>
-                        <th>TODO app</th>
-                        <th>HTML, CSS, PHP</th>
-                        <th>Creating Homepage </th>
-                    </tr>
-                    <tr class="tableheads1">
-                        <th>2.</th>
-                        <th>Portfolio Website</th>
-                        <th>HTML, CSS, PHP</th>
-                        <th>Creating Homepage,Resumefront,contact front page </th>
-                    </tr>
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>Image</th>
+                                <th>Project Name</th>
+                                <th>Skills</th>
+                                <th>Description</th>
+                                <th>Link to github</th>
+                            </tr>
+                        </thead>
+                        @forelse($projects as $project)
+                                        <div class="qual-item">
+                                            <tbody>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><img src=" {{asset($project['image']) }}" alt="Project Image"></td>
+                                                <td>{{ $project['name'] }}</td>
+                                                <td>{{ $project['skills'] }}</td>
+                                                <td>{{ $project['description'] }}</td>
+                                                <td>
+                                                        <a href="{{ $project['link'] }}" target="_blank" id="git">Go to github</a>
+                                                </td>                                                    
+                                                </td>
+                                            </tbody>
+                                        </div>
+
+                                </div>
+                            </div>
+                        @empty
+                         <tbody>
+                        <tr>
+                            <td colspan="7" class="no-data">No Projects added yet. Go to Projects tab and Add to show here</td>
+                        </tr>
+                    </tbody>
+                    @endforelse
                 </table>
             </div>
         </div>
