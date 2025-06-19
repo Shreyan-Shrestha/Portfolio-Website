@@ -24,7 +24,8 @@ class ResumeRequest extends FormRequest
             "number"=>"required|string|max:15",
             "email"=>"required|email|max:100",
             "address"=>"required|string|max:255",
-            "about"=>"required|text|max:500",
+            "aboutshort"=>"required|string|max:100",
+            "aboutlong"=>"required|text|max:500",
             "photo"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:4048",
             "github"=>"required|url|max:100",
         ];

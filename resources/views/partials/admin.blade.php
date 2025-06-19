@@ -21,7 +21,7 @@
                         </li>
 
                         <li>
-                            <a href="/skillindex"><div class="nav_btn"><p class="nav_skills">Skills</p></div></a>
+                            <a href="/skills"><div class="nav_btn"><p class="nav_skills">Skills</p></div></a>
                         </li>
                         <li>
                             <a href="/projectindex"><div class="nav_btn"><p class="nav_projects">Projects</p></div></a>

@@ -328,21 +328,6 @@
 
         </div>
 
-        <div class="lang">
-            <h3 class="title">Language</h3>
-            <ul>
-                <li>
-                    <span class="icon">Nepali</span>
-
-                </li>
-                <li>
-                    <span class="icon">English</span>
-
-                </li>
-            </ul>
-
-        </div>
-
         <div class="about-skills">
             <h3 class="title2">Skills</h3>
             <ul>

@@ -8,6 +8,7 @@ use App\Http\Requests\ResumeRequest;
 use App\Http\Requests\SkillRequest;
 use App\Models\Contact; 
 use App\Models\Personal;
+use App\Models\Skills;
 
 class AdminController extends Controller
 {
@@ -73,7 +74,7 @@ class AdminController extends Controller
     public function skilledit(SkillRequest $request)
     {
         $validated = $request->validated();
-        Skills::where('id', $request['$id'])->update($validated);
+        Skills::where('id', $request['id'])->update($validated);
         return redirect('/skills');
     }
 
