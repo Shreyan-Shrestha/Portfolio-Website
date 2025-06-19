@@ -6,8 +6,9 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [PortfolioController::class, 'index']);
 Route::get('/resume', [PortfolioController::class, 'resume']);
-
+Route::get('/projects', [PortfolioController::class, 'project']);
 Route::get('/contact', [PortfolioController::class, 'contact']);
+
 Route::get('/viewcontact', [AdminController::class, 'contactindex']);
 Route::post('/contact', [AdminController::class, 'contactstore']);
 
@@ -33,4 +34,11 @@ Route::get('/addabout', [AdminController::class,'aboutview']);
 Route::post('/about', [AdminController::class,'aboutstore']);
 Route::get('/editaboutview/{id}', [AdminController::class,'abouteditview']);
 Route::put('/editabout/{id}', [AdminController::class,'aboutedit']);
+
+Route::get('/project', [AdminController::class, 'project']);
+Route::get('/addproject', [AdminController::class,'projectview']);
+Route::post('/projectform', [AdminController::class,'projectform']);
+Route::get('/projecteditview/{id}', [AdminController::class,'projecteditview']);
+Route::put('/projectedit/{id}', [AdminController::class,'projectedit']);
+Route::delete('/deleteproject/{id}', [AdminController::class,'destroyproject']);
 

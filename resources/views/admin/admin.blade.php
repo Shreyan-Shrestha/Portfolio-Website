@@ -105,7 +105,16 @@ th, td {
         padding: 20px;
         color: #666;
 }
-
+#git{
+        color: blue;
+        text-decoration: none;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
     
 </style>
 
@@ -130,21 +139,41 @@ th, td {
             </div>
         </div>
         <h2>Projects:</h2>
-        <div class="admin_projects">
-            <table>
-                    <thead>
-                        <tr>
-                            <th>S.N</th>
-                            <th>Project Name</th>
-                            <th>Skills Used in Project</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <table>
+                        <thead>
                             <tr>
-                                <td colspan="4" class="no-data">No Projects added yet. Go to Projects and add to show here</td>
+                                <th>S.N</th>
+                                <th>Image</th>
+                                <th>Project Name</th>
+                                <th>Skills</th>
+                                <th>Description</th>
+                                <th>Link to github</th>
                             </tr>
+                        </thead>
+                        @forelse($projects as $project)
+                                        <div class="qual-item">
+                                            <tbody>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><img src=" {{asset($project['image']) }}" alt="Project Image"></td>
+                                                <td>{{ $project['name'] }}</td>
+                                                <td>{{ $project['skills'] }}</td>
+                                                <td>{{ $project['description'] }}</td>
+                                                <td>
+                                                        <a href="{{ $project['link'] }}" target="_blank" id="git">Go to github</a>
+                                                </td>                                                    
+                                                </td>
+                                            </tbody>
+                                        </div>
+
+                                </div>
+                            </div>
+                        @empty
+                         <tbody>
+                        <tr>
+                            <td colspan="7" class="no-data">No Projects added yet. Go to Projects tab and Add to show here</td>
+                        </tr>
                     </tbody>
+                    @endforelse
                 </table>
         </div>
     </div>
