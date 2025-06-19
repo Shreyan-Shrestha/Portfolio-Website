@@ -214,9 +214,6 @@
 
     }
 
-    .about-skills{
-        margin-top: 5px;
-    }
     .about .box {
         display: flex;
         flex-direction: row;
