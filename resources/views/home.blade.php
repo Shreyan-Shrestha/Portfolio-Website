@@ -67,7 +67,7 @@ body {
 .profile-photo {
   width: 200px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-right: 40px;
 }
 
@@ -136,8 +136,8 @@ footer {
 @section('title', 'Portfolio | Home')
 @section('content')
     <section class="hero">
-      <div>
-        <img src="profile.png" alt="Profile Photo" class="profile-photo"/>
+      <div class="img_wrapper">
+        <img src="https://placehold.co/600x400?text=Profile" alt="Profile Photo" class="profile-photo"/>
       </div>
       <div class="hero-text">
         <h1></h1>

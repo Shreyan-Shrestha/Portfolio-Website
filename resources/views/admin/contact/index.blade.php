@@ -114,6 +114,10 @@
         display: none;
         height: 40px !important;
     }
+    .btn-del{
+        background: rgb(222, 49, 69);
+        color: white;
+    }
 </style>
 
 @section('title', 'Portfolio Website | Received Messages')
@@ -147,7 +151,6 @@
                                             <button class ="btn-del" onclick="return confirm('Do you really want to delete student!')" type="submit">Delete</button>
                                         </form>
                                     </div>
-                                    <a><button>View</button></a>
                                 </td>
                             </tr>
                         @empty
