@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+
+Route::get('/register', [AuthController::class,'registerview'] );
+Route::post('/register', [AuthController::class,'register'] );
+
+Route::get('/login', [AuthController::class,'loginview'] )->name('login');
+Route::post('/login', [AuthController::class,'login'] );
+Route::post('/logout', [AuthController::class,'logout'] );
 
 Route::get('/', [PortfolioController::class, 'index']);
 Route::get('/resume', [PortfolioController::class, 'resume']);
@@ -12,7 +20,7 @@ Route::get('/contact', [PortfolioController::class, 'contact']);
 Route::get('/viewcontact', [AdminController::class, 'contactindex']);
 Route::post('/contact', [AdminController::class, 'contactstore']);
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::middleware("auth")->get('/admin', [AdminController::class, 'index']);
 Route::delete('/delete/{id}', [AdminController::class, 'destroy']);
 
 Route::get('/skills', [AdminController::class, 'skills']);
