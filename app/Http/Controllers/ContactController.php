@@ -6,18 +6,15 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-  public function showForm()
+    public function submit(Request $request)
     {
-        return view('contact');
-    }
-
-    public function submitForm(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
+        $request->validate([
+            'name' => 'required|string',
             'email' => 'required|email',
-            'message' => 'required|string',
         ]);
-        return back()->with('success', 'Your message has been sent!');
+
+        // Your form processing logic here...
+
+        return redirect()->back()->with('success', 'Thank you for contacting us!');
     }
 }
