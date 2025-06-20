@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+<<<<<<< HEAD
+=======
+storage/logs/laravel.log
+>>>>>>> 6c463834082e87935d9a53e53a93ebbc1f936617
